@@ -1,5 +1,5 @@
 import React from 'react'
-import '../static/style/components/Header.css'
+import '../public/static/style/components/Header.css'
 import {Row, Col, Menu} from 'antd'
 import { SmileOutlined , HomeOutlined, YoutubeOutlined} from '@ant-design/icons'
 
