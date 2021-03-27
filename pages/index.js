@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import Header from '../components/Header'
+import Author from '../components/Author'
 import {Row, Col, List} from 'antd'
 import { CalendarOutlined , FolderAddOutlined, FireOutlined} from '@ant-design/icons'
 import '../public/static/style/pages/index.css'
@@ -36,7 +37,7 @@ const Home = () => {
                 </Col>
 
                 <Col className="comm-right" xs={0} sm={0} md={7} lg={5} xl={4}>
-                    右侧
+                    <Author />
                 </Col>
             </Row>
         </div>
