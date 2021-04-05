@@ -10,6 +10,7 @@ import Advert from '../components/Advert'
 import Footer from '../components/Footer'
 import '../public/static/style/pages/detailed.css'
 import { CalendarOutlined , FolderAddOutlined, FireOutlined} from '@ant-design/icons'
+import axios from "axios"
 
 const Detailed = () => {
 
@@ -62,7 +63,7 @@ const Detailed = () => {
             </Head>
             <Header />
             <Row className="comm-main" type="flex" justify="center">
-                <Col className="comm-left" xs={24} sm={24} md={16} lg={18} xl={14}  >
+                <Col className="comm-left" xs={24} sm={24} md={16} lg={18} xl={14}>
                     <div>
                         <div className="bread-div">
                             <Breadcrumb>
@@ -115,5 +116,19 @@ const Detailed = () => {
 
         </>
     )
+}
+Detailed.getInitialProps = async(context)=>{
+
+    console.log(context.query.id)
+    let id =context.query.id
+    const promise = new Promise((resolve)=>{
+
+        axios('http://127.0.0.1:7001/front/getArticleById/'+id).then((res)=>{
+                resolve(res.data.data[0])
+            }
+        )
+    })
+
+    return await promise
 }
 export default Detailed

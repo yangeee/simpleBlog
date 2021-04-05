@@ -22,6 +22,7 @@ module.exports = appInfo => {
   const userConfig = {
     // myAppName: 'egg',
   };
+  // 数据库配置
   config.mysql = {
     // database configuration
     client: {
@@ -40,6 +41,17 @@ module.exports = appInfo => {
     app: true,
     // load into agent, default is close
     agent: true,
+  };
+  // 跨域配置
+  config.security = {
+    csrf: {
+      enable: false
+    },
+    domainWhiteList: [ '*' ]
+  };
+  config.cors = {
+    origin: '*',
+    allowMethods: 'GET,HEAD,PUT,POST,DELETE,PATCH,OPTIONS'
   };
   return {
     ...config,
