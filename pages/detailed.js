@@ -14,6 +14,7 @@ import javascript from 'highlight.js/lib/languages/javascript';
 hljs.registerLanguage('javascript', javascript);
 import 'highlight.js/styles/monokai-sublime.css';
 import axios from "axios"
+import  servicePath  from '../config/apiUrl'
 import Tocify from '../components/tocify.tsx'
 
 
@@ -105,7 +106,7 @@ Detailed.getInitialProps = async(context)=>{
     let id =context.query.id
     const promise = new Promise((resolve)=>{
 
-        axios('http://127.0.0.1:7001/front/getArticleById/'+id).then((res)=>{
+        axios(servicePath.getArticleById+id).then((res)=>{
                 resolve(res.data.data[0])
             }
         )

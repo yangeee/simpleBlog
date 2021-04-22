@@ -1,13 +1,18 @@
 import React, {useState} from 'react'
+// 功能组件
 import Link from 'next/link'
 import Header from '../components/Header'
 import Author from '../components/Author'
 import Advert from '../components/Advert'
 import Footer from '../components/Footer'
+// UI组件
 import {Row, Col, List} from 'antd'
 import { CalendarOutlined , FolderAddOutlined, FireOutlined} from '@ant-design/icons'
 import '../public/static/style/pages/index.css'
+// 数据传输
 import axios from "axios"
+import  servicePath  from '../config/apiUrl'
+
 const Home = (list) => {
     const [myList, setMyList] = useState(
         list.data
@@ -50,7 +55,7 @@ const Home = (list) => {
 }
 Home.getInitialProps = async ()=>{
     const promise = new Promise((resolve)=>{
-        axios('http://127.0.0.1:7001/front/getArticleList').then(
+        axios(servicePath.getArticleList).then(
             (res)=>{
                 //console.log('远程获取数据结果:',res.data.data)
                 resolve(res.data)
