@@ -7,7 +7,7 @@ import Advert from '../components/Advert'
 import Footer from '../components/Footer'
 // UI组件
 import {Row, Col, List} from 'antd'
-import { CalendarOutlined , FolderAddOutlined, FireOutlined} from '@ant-design/icons'
+import { CalendarTwoTone , FolderOpenTwoTone, FireTwoTone} from '@ant-design/icons'
 import '../public/static/style/pages/index.css'
 // 数据传输
 import axios from "axios"
@@ -34,9 +34,9 @@ const Home = (list) => {
                                     </Link>
                                 </div>
                                 <div className="list-icon">
-                                    <span><CalendarOutlined />{item.addTime}</span>
-                                    <span><FolderAddOutlined />  {item.typeName}</span>
-                                    <span><FireOutlined /> {item.view_count}人</span>
+                                    <span><CalendarTwoTone />{item.addTime}</span>
+                                    <span><FolderOpenTwoTone />  {item.typeName}</span>
+                                    <span><FireTwoTone /> {item.view_count}人</span>
                                 </div>
                                 <div className="list-context">{item.introduce}</div>
                             </List.Item>

@@ -1,12 +1,14 @@
 import { CalendarOutlined , FolderAddOutlined, FireOutlined} from '@ant-design/icons'
 
 import React,{useState} from 'react'
-import {Row, Col , List ,Icon ,Breadcrumb  } from 'antd'
+import {Row, Col , List  ,Breadcrumb  } from 'antd'
 import Header from '../components/Header'
 import Author from '../components/Author'
 import Advert from '../components/Advert'
 import Footer from '../components/Footer'
 import '../public/static/style/pages/list.css'
+import { CalendarTwoTone , FolderOpenTwoTone, FireTwoTone} from '@ant-design/icons'
+
 
 
 
@@ -42,9 +44,9 @@ const Home = () =>{
                                 <List.Item>
                                     <div className="list-title">{item.title}</div>
                                     <div className="list-icon">
-                                        <span><Icon type="calendar" /> 2019-06-28</span>
-                                        <span><Icon type="folder" /> 视频教程</span>
-                                        <span><Icon type="fire" /> 5498人</span>
+                                        <span><CalendarTwoTone /> 2019-06-28</span>
+                                        <span><FolderOpenTwoTone /> 视频教程</span>
+                                        <span><FireTwoTone /> 5498人</span>
                                     </div>
                                     <div className="list-context">{item.context}</div>
                                 </List.Item>
