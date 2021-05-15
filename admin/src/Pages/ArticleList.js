@@ -7,9 +7,9 @@ import servicePath from '../config/apiUrl'
 const {confirm} = Modal;
 
 function ArticleList(props) {
-    useEffect(()=>{
+    useEffect(() => {
         getList()
-    },[])
+    }, [])
 
     const [list, setList] = useState([])
 
@@ -26,6 +26,31 @@ function ArticleList(props) {
             }
         )
     }
+
+    //删除文章
+    const delArticle = (id) => {
+        confirm({
+            title: '确定要删除这篇博客文章吗?',
+            content: '如果你点击OK按钮，文章将会永远被删除，无法恢复。',
+            onOk() {
+                axios(servicePath.delArticle + id, {withCredentials: true}).then(
+                    res => {
+                        message.success('文章删除成功')
+                        getList()
+                    }
+                )
+            },
+            onCancel() {
+                message.success('没有任何改变')
+            },
+        })
+    }
+
+    //修改文章
+    const updateArticle = (id, checked) => {
+        props.history.push('/index/add/' + id)
+    }
+
     return (
         <div>
             <List
@@ -75,9 +100,21 @@ function ArticleList(props) {
                             </Col>
 
                             <Col span={4}>
-                                <Button type="primary">修改</Button>&nbsp;
-
-                                <Button>删除 </Button>
+                                <Button
+                                    type="primary"
+                                    onClick={() => {
+                                        updateArticle(item.id)
+                                    }}
+                                >
+                                    修改
+                                </Button>&nbsp;
+                                <Button
+                                    onClick={() => {
+                                        delArticle(item.id)
+                                    }}
+                                >
+                                    删除
+                                </Button>
                             </Col>
                         </Row>
 
