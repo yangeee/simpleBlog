@@ -38,6 +38,33 @@ class MainController extends Controller {
         const resType = await this.app.mysql.select('type')
         this.ctx.body = {data: resType}
     }
+
+    //添加文章
+    async addArticle(){
+
+        let tmpArticle= this.ctx.request.body
+        // tmpArticle.
+        const result = await this.app.mysql.insert('article',tmpArticle)
+        const insertSuccess = result.affectedRows === 1
+        const insertId = result.insertId
+
+        this.ctx.body={
+            isSuccess:insertSuccess,
+            insertId:insertId
+        }
+    }
+
+    //修改文章
+    async updateArticle(){
+        let tmpArticle= this.ctx.request.body
+
+        const result = await this.app.mysql.update('article', tmpArticle);
+        const updateSuccess = result.affectedRows === 1;
+        console.log(updateSuccess)
+        this.ctx.body={
+            isSuccess:updateSuccess
+        }
+    }
 }
 
 module.exports = MainController
