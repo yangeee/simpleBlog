@@ -1,7 +1,6 @@
 import React,{useState} from 'react'
 import Head from 'next/head'
 import {Row, Col  ,Breadcrumb, Affix  } from 'antd'
-import 'markdown-navbar/dist/navbar.css';
 import Header from '../components/Header'
 import Author from '../components/Author'
 import Advert from '../components/Advert'
@@ -64,12 +63,12 @@ const Detailed = (props) => {// props来自下面的初始化promise的resolve
 
                         <div>
                             <div className="detailed-title">
-                                React实战视频
+                               你知道我要说什么
                             </div>
 
                             <div className="list-icon center">
                                 <span><CalendarOutlined /> 2021-06-28</span>
-                                <span><FolderAddOutlined /> 视频教程</span>
+                                <span><FolderAddOutlined /> 白月魁老婆</span>
                                 <span><FireOutlined /> 5498人</span>
                             </div>
 
