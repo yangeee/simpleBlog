@@ -36,7 +36,7 @@ const Header=()=>{
         <div className='header'>
             <Row type="flex" justify="center">
                 <Col xs={24} sm={24} md={10} lg={10} xl={10}>
-                    <span className="header-logo">简单男孩测试2222222</span>
+                    <span className="header-logo">简单男孩测试3333333</span>
                     <span className="header-txt">前端带师</span>
                 </Col>
                 <Col xs={0} sm={0} md={14} lg={8} xl={6}>
