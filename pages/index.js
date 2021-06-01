@@ -8,7 +8,7 @@ import Footer from '../components/Footer'
 // UI组件
 import {Row, Col, List} from 'antd'
 import { CalendarTwoTone , FolderOpenTwoTone, FireTwoTone} from '@ant-design/icons'
-import s from '../public/static/style/pages/index.module.scss'
+import s from '@sp/index.module.scss'
 // 数据传输
 import axios from "axios"
 import  servicePath  from '../config/apiUrl'

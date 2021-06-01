@@ -5,7 +5,7 @@ import Header from '../components/Header'
 import Author from '../components/Author'
 import Advert from '../components/Advert'
 import Footer from '../components/Footer'
-import s from '../public/static/style/pages/detailed.module.scss'
+import s from '@sp/detailed.module.scss'
 import { CalendarOutlined , FolderAddOutlined, FireOutlined} from '@ant-design/icons'
 import marked from 'marked'
 import hljs from 'highlight.js/lib/core';

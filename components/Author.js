@@ -1,5 +1,5 @@
 import {Avatar,Divider} from 'antd'
-import s from '../public/static/style/components/Author.module.css'
+import s from '@sc/Author.module.css'
 import { CalendarOutlined , FolderAddOutlined, FireOutlined} from '@ant-design/icons'
 
 const Author =()=>{

@@ -1,4 +1,4 @@
-import s from '../public/static/style/components/footer.module.scss'
+import s from '@sc/footer.module.scss'
 import React from "react"
 const Footer = ()=>(
     <div className={s.footer}>

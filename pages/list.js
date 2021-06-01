@@ -8,7 +8,7 @@ import Header from '../components/Header'
 import Author from '../components/Author'
 import Advert from '../components/Advert'
 import Footer from '../components/Footer'
-import '../public/static/style/pages/list.module.css'
+import '@sp/list.module.css'
 import {CalendarTwoTone, FolderOpenTwoTone, FireTwoTone} from '@ant-design/icons'
 
 
