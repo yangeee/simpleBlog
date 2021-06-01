@@ -8,7 +8,7 @@ import Footer from '../components/Footer'
 // UI组件
 import {Row, Col, List} from 'antd'
 import { CalendarTwoTone , FolderOpenTwoTone, FireTwoTone} from '@ant-design/icons'
-import '../public/static/style/pages/index.css'
+import s from '../public/static/style/pages/index.module.scss'
 // 数据传输
 import axios from "axios"
 import  servicePath  from '../config/apiUrl'
@@ -18,9 +18,9 @@ const Home = (list) => {
         list.data
     )
     return(
-        <div>
+        <div className={s.mainContainer}>
             <Header />
-            <Row className="comm-main" type="flex" justify="center">
+            <Row className type="flex" justify="center">
                 <Col className="comm-left" xs={24} sm={24} md={16} lg={18} xl={14}  >
                     <List
                         header={<div>最新日志</div>}
@@ -28,17 +28,17 @@ const Home = (list) => {
                         dataSource={myList}
                         renderItem={item=>(
                             <List.Item>
-                                <div className="list-title">
+                                <div className={s.listTitle}>
                                     <Link href={{pathname:'/detailed', query: {id:item.id}}}>
                                         <a>{item.title}</a>
                                     </Link>
                                 </div>
-                                <div className="list-icon">
+                                <div className={s.listIcon}>
                                     <span><CalendarTwoTone />{item.addTime}</span>
                                     <span><FolderOpenTwoTone />  {item.typeName}</span>
                                     <span><FireTwoTone /> {item.view_count}人</span>
                                 </div>
-                                <div className="list-context">{item.introduce}</div>
+                                <div className={s.listContext}>{item.introduce}</div>
                             </List.Item>
                         )}
                     />

@@ -8,7 +8,7 @@ import Header from '../components/Header'
 import Author from '../components/Author'
 import Advert from '../components/Advert'
 import Footer from '../components/Footer'
-import '../public/static/style/pages/list.css'
+import '../public/static/style/pages/list.module.css'
 import {CalendarTwoTone, FolderOpenTwoTone, FireTwoTone} from '@ant-design/icons'
 
 
@@ -28,7 +28,7 @@ const ArticleList = (list) => {
                         <div className="bread-div">
                             <Breadcrumb>
                                 <Breadcrumb.Item><a href="/">首页</a></Breadcrumb.Item>
-                                <Breadcrumb.Item>视频列表</Breadcrumb.Item>
+                                <Breadcrumb.Item>文章列表</Breadcrumb.Item>
                             </Breadcrumb>
                         </div>
 

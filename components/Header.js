@@ -4,7 +4,7 @@ import Link from 'next/link'
 import axios from 'axios'
 import  servicePath  from '../config/apiUrl'
 
-import '../public/static/style/components/Header.css'
+import s from '../public/static/style/components/Header.module.css'
 import {Row, Col, Menu} from 'antd'
 import { SmileOutlined , HomeOutlined, YoutubeOutlined} from '@ant-design/icons'
 
@@ -25,7 +25,7 @@ const Header=()=>{
 
     //跳转到列表页
     const handleClick = (e)=>{
-        if(e.key==0){
+        if(e.key===0){
             Router.push('/')
         }else{
             Router.push('/list?id='+e.key)
@@ -33,11 +33,11 @@ const Header=()=>{
     }
 
     return (
-        <div className='header'>
+        <div className={s.header}>
             <Row type="flex" justify="center">
                 <Col xs={24} sm={24} md={10} lg={10} xl={10}>
-                    <span className="header-logo">简单男孩</span>
-                    <span className="header-txt">前端带师</span>
+                    <span className={s.headerLogo}>简单男孩</span>
+                    <span className={s.headerText}>一个人站立发呆，找不到人陪我看海</span>
                 </Col>
                 <Col xs={0} sm={0} md={14} lg={8} xl={6}>
                     <Menu

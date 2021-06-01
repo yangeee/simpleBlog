@@ -1,0 +1,22 @@
+.mainContainer{
+    height: 100vh;
+    background: linear-gradient(92.37deg, rgba(255, 184, 47, 0.2) 1.15%, rgba(238, 109, 237, 0.2) 36.96%, rgba(163, 47, 255, 0.2) 98.11%, rgba(6, 202, 198, 0.2) 124.22%);
+}
+.listTitle{
+    font-size:2rem;
+    color: #1e90ff;
+    padding: 0 0.5rem;
+}
+.listContext{
+    color:#777;
+    padding:.5rem;
+}
+.listIcon{
+    padding:.5rem 0;
+    color:#AAA;
+}
+.listIcon span{
+    display: inline-block;
+    padding: 0 10px;
+}
+
