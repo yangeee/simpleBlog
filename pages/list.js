@@ -9,7 +9,7 @@ import Author from '../components/Author'
 import Advert from '../components/Advert'
 import Footer from '../components/Footer'
 import '@sp/list.module.css'
-import {CalendarTwoTone, FolderOpenTwoTone, FireTwoTone} from '@ant-design/icons'
+import {CalendarTwoTone, FolderOpenTwoTone, FireTwoTone} from '@ant-design/icons' 
 
 
 const ArticleList = (list) => {
