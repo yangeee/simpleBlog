@@ -1,6 +1,6 @@
 import React ,{useState,useEffect} from 'react'
 import Router from 'next/router'
-import Link from 'next/link' 
+import Link from 'next/link'  
 import axios from 'axios'
 import  servicePath  from '../config/apiUrl'
 
