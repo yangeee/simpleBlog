@@ -1,11 +1,11 @@
 import React ,{useState,useEffect} from 'react'
 import Router from 'next/router'
-import Link from 'next/link'   
+import Link from 'next/link'
 import axios from 'axios'
 import  servicePath  from '../config/apiUrl'
 
 import s from '@sc/Header.module.css'
-import {Row, Col, Menu} from 'antd'
+import {Row, Col, Menu} from 'antd' 
 import { SmileOutlined , HomeOutlined, YoutubeOutlined} from '@ant-design/icons'
 
 const Header=()=>{
