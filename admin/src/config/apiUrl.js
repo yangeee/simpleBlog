@@ -1,4 +1,9 @@
-let ipUrl = 'http://127.0.0.1:7001/admin/'
+let ipUrl
+if(process.env.NODE_ENV === 'development'){
+    ipUrl = 'http://127.0.0.1:7001/admin/'
+}else{
+    ipUrl = 'https://yang.plus/api/admin/'
+}
 
 let servicePath = {
     checkLogin:ipUrl + 'checkLogin' ,  //  检查用户名密码是否正确

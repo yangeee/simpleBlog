@@ -1,4 +1,9 @@
-let ipUrl = 'http://127.0.0.1:7001/front/'
+let ipUrl
+if(process.env.NODE_ENV === 'development'){
+    ipUrl = 'http://127.0.0.1:7001/front/'
+}else{
+    ipUrl = 'https://yang.plus/api/front/'
+}
 
 let servicePath = {
     getArticleList:ipUrl + 'getArticleList' ,  //  首页文章列表接口
