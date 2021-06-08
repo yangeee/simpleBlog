@@ -4,7 +4,7 @@ import Login from './Login'
 import AdminIndex from './AdminIndex'
 function Main(){
     return (
-            <Router>
+            <Router basename="/admin">
                 <Route path="/login/" exact component={Login} />
                 <Route path="/index/"  component={AdminIndex} />
             </Router>

@@ -1,18 +1,18 @@
-import {Avatar,Divider} from 'antd'
-import s from '@sc/Author.module.css'
-import { CalendarOutlined , FolderAddOutlined, FireOutlined} from '@ant-design/icons'
+import {Avatar, Divider} from 'antd'
+import s from '@sc/Author.module.scss'
+import {GithubOutlined, WechatOutlined, QqOutlined} from '@ant-design/icons';
 
-const Author =()=>{
+const Author = () => {
 
     return (
         <div className={s.authorDiv}>
-            <div> <Avatar size={100} src="https://ftp.bmp.ovh/imgs/2021/03/d0404e15a98e7e6e.jpg"  /></div>
+            <div><Avatar size={100} src="https://ftp.bmp.ovh/imgs/2021/03/d0404e15a98e7e6e.jpg"/></div>
             <div className={s.authorIntroduction}>
-                222222222222
+                <span className={s.span}>困了就睡觉，饿了就吃饭，有劲了就玩</span>
                 <Divider>社交账号</Divider>
-                <Avatar size={28}  className="account"  />
-                <Avatar size={28}  className="account" />
-                <Avatar size={28}  className="account"   />
+                <a href="https://github.com/yangeee" className={s.authorHref}><GithubOutlined/></a>
+                <a href="https://github.com/yangeee" className={s.authorHref}><WechatOutlined/></a>
+                <a href="https://github.com/yangeee" className={s.authorHref}><QqOutlined/></a>
             </div>
         </div>
     )
