@@ -2,7 +2,7 @@ import React , {useState,useEffect,createContext} from 'react';
 import 'antd/dist/antd.css'
 import {Card, Input, Button, Spin, message} from 'antd'
 import {InfoCircleOutlined, UserOutlined} from '@ant-design/icons'
-import '@sc/Login.css'
+import '@/Login.css'
 import axios from 'axios'
 import servicePath from "../config/apiUrl"
 
@@ -57,7 +57,6 @@ function Login(props) {
     }
     return (
         <div className="login-div">
-
             <Spin tip="Loading..." spinning={isLoading}>
                 <Card title="s1mple Blog System" bordered={true} style={{width: 400}}>
                     <Input

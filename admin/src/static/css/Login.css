@@ -1,7 +1,10 @@
 .login-div{
-    margin: 150px auto;
-    width: 400px;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 body{
-    background-color: #f0f0f0;
+    background: linear-gradient(132.66deg, #5B29F4 0%, #FF5A82 95.6%), linear-gradient(70.07deg, #0E0E0E -0.58%, #4C4340 31.5%, #7A584E 52.98%, #AF573C 76.26%, #DC572E 99.26%);
 }
