@@ -8,7 +8,7 @@ const Author = () => {
         <div className={s.authorDiv}>
             <div><Avatar size={100} src="https://ftp.bmp.ovh/imgs/2021/03/d0404e15a98e7e6e.jpg"/></div>
             <div className={s.authorIntroduction}>
-                <span className={s.span}>困了就睡觉，饿了就吃饭，有劲了就玩</span>
+                <span className={s.span}>simple</span>
                 <Divider>社交账号</Divider>
                 <a href="https://github.com/yangeee" className={s.authorHref}><GithubOutlined/></a>
                 <a href="https://github.com/yangeee" className={s.authorHref}><WechatOutlined/></a>
@@ -16,7 +16,6 @@ const Author = () => {
             </div>
         </div>
     )
-
 }
 
 export default Author

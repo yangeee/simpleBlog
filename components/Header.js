@@ -34,12 +34,12 @@ const Header=()=>{
 
     return (
         <div className={s.header}>
-            <Row type="flex" justify="center">
-                <Col xs={24} sm={24} md={10} lg={10} xl={10}>
-                    <span className={s.headerLogo}>简单男孩</span>
-                    <span className={s.headerText}>一个人站立发呆，找不到人陪我看海</span>
+            <Row type="flex" justify="center" align="middle">
+                <Col xs={24} sm={24} md={10} lg={10} xl={10} className={s.headerTitle}>
+                    <span className={s.headerLogo}>简单男孩のblog</span>
+                    <span className={s.headerText}>桃李不言，下自成蹊</span>
                 </Col>
-                <Col xs={0} sm={0} md={14} lg={8} xl={6}>
+                <Col xs={0} sm={0} md={14} lg={8} xl={6} >
                     <Menu
                         mode="horizontal"
                         onClick={handleClick}

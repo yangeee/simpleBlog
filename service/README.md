@@ -1,33 +1,70 @@
-# service
+Hi，这里是杨艺的个人博客代码仓库  
+[线上博客入口](https://yang.plus/)
 
-service for simple's blog 
+项目目录:
+``` 
+├── admin
+│   ├── build
+│   ├── config
+│   ├── public
+│   ├── scripts
+│   ├── src
+│   ├── package-lock.json
+│   ├── package.json
+│   └── README.md
+├── components
+│   ├── Advert.js
+│   ├── Author.js
+│   ├── Footer.js
+│   ├── Header.js
+│   └── tocify.tsx
+├── config
+│   └── apiUrl.js
+├── pages
+│   ├── api
+│   ├── detailed.js
+│   ├── index.js
+│   ├── list.js
+│   └── _app.js
+├── public
+│   ├── static
+│   ├── favicon.ico
+│   └── vercel.svg
+├── service
+│   ├── app
+│   ├── config
+│   ├── logs
+│   ├── run
+│   ├── test
+│   ├── typings
+│   ├── appveyor.yml
+│   ├── jsconfig.json
+│   ├── package-lock.json
+│   ├── package.json
+│   └── README.md
+├── jsconfig.json
+├── next.config.js
+├── package-lock.json
+├── package.json
+├── README.md
+└── simple_blog.sql
+``` 
 
-## QuickStart
-
-<!-- add docs here for user -->
-
-see [egg docs][egg] for more detail.
+# Install
+`npm i`
 
 ### Development
-
-```bash
-$ npm i
-$ npm run dev
-$ open http://localhost:7001/
+client
 ```
+npm run dev  
+```
+serve
+```
+npm run serve  
+```
+Don't forget to open your database before run serve
 
 ### Deploy
+I did some automation, so I only had to push to github, you need to configure your jenkins to interact with the server yourself
 
-```bash
-$ npm start
-$ npm stop
-```
-
-### npm scripts
-
-- Use `npm run lint` to check code style.
-- Use `npm test` to run unit test.
-- Use `npm run autod` to auto detect dependencies upgrade, see [autod](https://www.npmjs.com/package/autod) for more detail.
-
-
-[egg]: https://eggjs.org
+### Enjoy Your Blog!
