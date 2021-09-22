@@ -38,7 +38,7 @@ const Header=()=>{
                 <Col xs={24} sm={24} md={10} lg={10} xl={10} className={s.headerTitle}>
                     <span className={s.headerLogo}>简单男孩のblog</span>
                     <span className={s.headerText}>桃李不言，下自成蹊</span>
-                </Col>
+                </Col> 
                 <Col xs={0} sm={0} md={14} lg={8} xl={6} >
                     <Menu 
                         mode="horizontal"
