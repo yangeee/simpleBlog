@@ -5,12 +5,12 @@ import '../static/css/AdminIndex.css'
 import {Route} from "react-router-dom";
 import AddArticle from './AddArticle'
 import ArticleList from './ArticleList'
- 
+
 const {Header, Content, Footer, Sider} = Layout;
 const {SubMenu} = Menu;
 
 
-function AdminIndex(props) {
+function AdminIndex(props) { 
 
     const [collapsed, setCollapsed] = useState(false)
 
