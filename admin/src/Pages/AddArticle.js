@@ -56,7 +56,7 @@ function AddArticle(props) {
 
   //选择类别后的处理函数
   const selectTypeHandler = (value) => {
-    setSelectedTypeName(value)
+    setSelectType(value)
   }
   // 得到修改后的文章
   const getArticleById = (id) => {
