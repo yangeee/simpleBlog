@@ -18,17 +18,31 @@
 	}
 }
 .listItem {
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
 	padding: 20px 5px;
 
 	&:hover {
 		background: #f5f7fa;
 	}
+	.left {
+		margin-right: 20px;
+		img {
+			max-width: 300px;
+		}
+	}
+	.right {
+
+	}
 }
 
 .listTitle {
-	font-size: 2rem;
-	color: black;
+	font-size: 1.5rem;
 	padding: 0 0.5rem;
+	a {
+		color: black;
+	}
 }
 
 .listContext {

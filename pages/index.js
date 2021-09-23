@@ -40,17 +40,22 @@ const Home = (list) => {
                 split={false}
                 renderItem={item => (
                   <List.Item className={s.listItem}>
-                    <div className={s.listTitle}>
-                      <Link href={{pathname: '/detailed', query: {id: item.id}}}>
-                        <a>{item.title}</a>
-                      </Link>
+                    <div className={s.left}>
+                      <img className={s.img} src='static/image/1.jpg' alt=""/>
                     </div>
-                    <div className={s.listIcon}>
-                      <span><CalendarTwoTone/>{item.addTime}</span>
-                      <span><FolderOpenTwoTone/> {item.typeName}</span>
-                      <span><FireTwoTone/> {item.view_count}人</span>
+                    <div className={s.right}>
+                      <div className={s.listTitle}>
+                        <Link href={{pathname: '/detailed', query: {id: item.id}}}>
+                          <a>{item.title}</a>
+                        </Link>
+                      </div>
+                      <div className={s.listIcon}>
+                        <span><CalendarTwoTone/>{item.addTime}</span>
+                        <span><FolderOpenTwoTone/> {item.typeName}</span>
+                        <span><FireTwoTone/> {item.view_count}人</span>
+                      </div>
+                      <div className={s.listContext}>{item.introduce}</div>
                     </div>
-                    <div className={s.listContext}>{item.introduce}</div>
                   </List.Item>
                 )}
               />
