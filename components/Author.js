@@ -13,7 +13,7 @@ const Author = () => {
                 <a href="https://github.com/yangeee" className={s.authorHref}><GithubOutlined/></a>
                 <a href="https://github.com/yangeee" className={s.authorHref}><WechatOutlined/></a>
                 <a href="https://github.com/yangeee" className={s.authorHref}><QqOutlined/></a>
-            </div>
+            </div> 
         </div>
     )
 }
