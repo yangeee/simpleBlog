@@ -1,22 +1,50 @@
-.mainContainer{
-    height: 100vh;
-    background: linear-gradient(92.37deg, rgba(255, 184, 47, 0.2) 1.15%, rgba(238, 109, 237, 0.2) 36.96%, rgba(163, 47, 255, 0.2) 98.11%, rgba(6, 202, 198, 0.2) 124.22%);
+.mainContainer {
+	margin-top: 60px;
+	user-select: none;
 }
-.listTitle{
-    font-size:2rem;
-    color: #1e90ff;
-    padding: 0 0.5rem;
+.contentContainer {
+	min-height: 1000px;
+	.commLeft {
+		background-color: #FFF;
+		border-radius: .3rem;
+		border: 1px solid #eee;
+		margin-top: 20px;
+		padding: 20px 35px 0;
+
+		.recommendType {
+			font-size: 1.2rem;
+			font-weight: 600;
+		}
+	}
 }
-.listContext{
-    color:#777;
-    padding:.5rem;
+.listItem {
+	padding: 20px 5px;
+
+	&:hover {
+		background: #f5f7fa;
+	}
 }
-.listIcon{
-    padding:.5rem 0;
-    color:#AAA;
+
+.listTitle {
+	font-size: 2rem;
+	color: black;
+	padding: 0 0.5rem;
 }
-.listIcon span{
-    display: inline-block;
-    padding: 0 10px;
+
+.listContext {
+	color: #777;
+	padding: .5rem;
 }
+
+.listIcon {
+	padding: .5rem 0;
+	color: #AAA;
+}
+
+.listIcon span {
+	display: inline-block;
+	padding: 0 10px;
+}
+
+
 
