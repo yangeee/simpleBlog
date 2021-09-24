@@ -3,7 +3,7 @@
     "baseUrl": ".",
     "paths": {
       "@sc/*": ["public/static/style/components/*"],
-      "@sp/*": ["public/static/style/pages/*"],
+      "@sp/*": ["public/static/style/pages/*"]
     }
   }
 }
