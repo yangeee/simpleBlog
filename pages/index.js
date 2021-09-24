@@ -12,6 +12,7 @@ import s from '@sp/index.module.scss'
 // 数据传输
 import axios from "axios"
 import servicePath from '../config/apiUrl'
+import Image from 'next/image'
 
 const Home = (list) => {
   const [myList, setMyList] = useState(
@@ -41,7 +42,7 @@ const Home = (list) => {
                 renderItem={item => (
                   <List.Item className={s.listItem}>
                     <div className={s.left}>
-                      <img className={s.img} src='static/image/1.jpg' alt=""/>
+                        <Image src='/images/1.jpg' width={300} height={170}/>
                     </div>
                     <div className={s.right}>
                       <div className={s.listTitle}>
