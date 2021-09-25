@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
+    "start": "NODE_ENV=production node server.js",
     "serve": "cd service/ & npm run start"
   },
   "dependencies": {
@@ -13,6 +13,7 @@
     "antd": "^4.14.1",
     "axios": "^0.21.1",
     "babel-plugin-import": "^1.13.3",
+    "express": "^4.17.1",
     "highlight.js": "^10.7.2",
     "lodash": "^4.17.21",
     "marked": "^2.0.3",
