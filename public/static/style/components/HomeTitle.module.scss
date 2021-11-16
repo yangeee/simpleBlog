@@ -1,0 +1,58 @@
+.homeTitle {
+	width: 100%;
+	padding: 30px 0;
+	display: flex;
+	justify-content: center;
+	align-content: center;
+
+	.wrapper {
+		text-align: center;
+
+		.title {
+			font-size: 2rem;
+			margin-bottom: 1rem;
+			background-image: linear-gradient(to right, rgb(86, 204, 242), rgb(47, 128, 237));
+			-webkit-background-clip: text;
+			color: transparent;
+			font-family: STXingkai, serif;
+		}
+
+		.verse {
+			font-size: 1.4rem;
+			font-weight: 600;
+			letter-spacing: .5rem;
+			background-image: linear-gradient(to right, rgb(131, 96, 195) 0%, rgb(131, 96, 195) 10%, rgb(46, 191, 145) 20%,
+				rgb(101, 78, 163) 30%, rgb(234, 175, 200) 40%, rgb(131, 96, 195) 50%, rgb(131, 96, 195) 60%, rgb(46, 191, 145) 70%,
+				rgb(101, 78, 163) 80%, rgb(234, 175, 200) 90%, rgb(131, 96, 195) 100%);
+			color: transparent;
+			background-size: 200% 100%;
+			-webkit-background-clip: text;
+			animation: move 5s infinite linear;
+			font-family: KaiTi, serif;
+		}
+
+		.verseFrom {
+			text-align: right;
+
+			span {
+				font-size: 1.2rem;
+				font-weight: 700;
+				text-align: right;
+				font-family: KaiTi, serif;
+				display: inline-block;
+				color: transparent;
+				-webkit-background-clip: text;
+				background-image: linear-gradient(to right, rgb(252, 70, 107), rgb(63, 94, 251));
+			}
+		}
+	}
+}
+
+@keyframes move {
+	0% {
+		background-position: 0 0;
+	}
+	100% {
+		background-position: -100% 0;
+	}
+}
