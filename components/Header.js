@@ -37,6 +37,7 @@ const Header = () => {
     </div>
   )
 
+  // 滚动改变头部样式
   function addScrollClass () {
     window.addEventListener('scroll', () => {
       const scrollTop = document.documentElement.scrollTop

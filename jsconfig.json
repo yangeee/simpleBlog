@@ -2,8 +2,15 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@sc/*": ["public/static/style/components/*"],
-      "@sp/*": ["public/static/style/pages/*"],
+      "@sc/*": [
+        "public/static/style/components/*"
+      ],
+      "@sp/*": [
+        "public/static/style/pages/*"
+      ],
+      "@utils/*": [
+        "public/utils/*"
+      ]
     }
   }
 }

@@ -68,10 +68,6 @@
 				align-items: center;
 
 				&:hover {
-					.wechat::before {
-						content: '';
-					}
-
 					background-color: rgba(80, 81, 241, .6);
 					color: #fdf7f7;
 					transition: all 0.2s;

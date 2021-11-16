@@ -6,6 +6,7 @@ import Author from '../components/Author'
 import Advert from '../components/Advert'
 import Footer from '../components/Footer'
 import HomeTitle from '../components/HomeTitle'
+import BackToTop from '../components/BackToTop'
 // UI组件
 import { Col, List, Row, Tabs } from 'antd'
 import { CalendarTwoTone, FireTwoTone, FolderOpenTwoTone } from '@ant-design/icons'
@@ -95,6 +96,7 @@ const Home = (list) => {
       </Row>
       {/* 通用脚部 */}
       <Footer/>
+      <BackToTop/>
     </div>
   )
 }
