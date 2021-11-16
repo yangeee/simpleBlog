@@ -87,8 +87,8 @@ const Home = (list) => {
             </TabPane>
           </Tabs>
         </Col>
-        {/* 右侧头像区 */}
-        <Col className="comm-right" xs={0} sm={0} md={7} lg={5} xl={4}>
+        {/* 右侧个人介绍区 */}
+        <Col className="comm-right" xs={0} sm={0} md={6} lg={6} xl={8}>
           <Author/>
           <Advert/>
         </Col>

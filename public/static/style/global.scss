@@ -13,3 +13,14 @@ a {
 * {
 	box-sizing: border-box;
 }
+
+// 取消 antd popover箭头
+.popoverConfig {
+	.ant-popover-inner {
+		border-radius: 20px;
+	}
+
+	.ant-popover-arrow {
+		display: none;
+	}
+}

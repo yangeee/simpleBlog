@@ -2,8 +2,10 @@
 	margin-top: 60px;
 	user-select: none;
 }
+
 .contentContainer {
 	min-height: 1000px;
+
 	.commLeft {
 		background-color: #FFF;
 		border-radius: .3rem;
@@ -17,6 +19,7 @@
 		}
 	}
 }
+
 .listItem {
 	display: flex;
 	align-items: center;
@@ -26,12 +29,15 @@
 	&:hover {
 		background: #f5f7fa;
 	}
+
 	.left {
 		margin-right: 20px;
+
 		img {
 			max-width: 300px;
 		}
 	}
+
 	.right {
 
 	}
@@ -40,6 +46,7 @@
 .listTitle {
 	font-size: 1.5rem;
 	padding: 0 0.5rem;
+
 	a {
 		color: black;
 	}
