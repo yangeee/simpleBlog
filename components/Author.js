@@ -16,5 +16,4 @@ const Author = () => {
     </div>
   )
 }
-
 export default Author
