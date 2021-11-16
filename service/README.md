@@ -23,7 +23,7 @@ Hi，这里是杨艺的个人博客代码仓库
 ├── pages
 │   ├── api
 │   ├── detailed.js
-│   ├── index.js
+│   ├── app.js
 │   ├── list.js
 │   └── _app.js
 ├── public

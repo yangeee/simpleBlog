@@ -1,8 +1,8 @@
 import { configureStore } from '@reduxjs/toolkit'
-import counterReducer from '../features/counter/counterSlice'
+import scrollReducer from './features/scrollSlice'
 
 export default configureStore({
   reducer: {
-    counter: counterReducer
+    scroll: scrollReducer
   }
 })

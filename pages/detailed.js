@@ -1,53 +1,52 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import Head from 'next/head'
-import {Row, Col, Breadcrumb, Affix} from 'antd'
+import { Row, Col, Breadcrumb, Affix } from 'antd'
 import Header from '../components/Header'
 import Author from '../components/Author'
 import Advert from '../components/Advert'
 import Footer from '../components/Footer'
 import s from '@sp/detailed.module.scss'
-import {CalendarOutlined, FolderAddOutlined, FireOutlined} from '@ant-design/icons'
+import { CalendarOutlined, FolderAddOutlined, FireOutlined } from '@ant-design/icons'
 import marked from 'marked'
-import hljs from 'highlight.js/lib/core';
-import javascript from 'highlight.js/lib/languages/javascript';
-
-hljs.registerLanguage('javascript', javascript);
-import 'highlight.js/styles/monokai-sublime.css';
-import axios from "axios"
+import hljs from 'highlight.js/lib/core'
+import javascript from 'highlight.js/lib/languages/javascript'
+import 'highlight.js/styles/monokai-sublime.css'
+import axios from 'axios'
 import servicePath from '../config/apiUrl'
 import Tocify from '../components/tocify.tsx'
 
+hljs.registerLanguage('javascript', javascript)
 
-const Detailed = (props) => {// props来自下面的初始化promise的resolve
-    let articleContent = props.article_content
-    let articleTitle = props.title
-    let viewCount = props.view_count
-    let typeName = props.typeName
-    let addTime = props.addTime
+const Detailed = (props) => { // props来自下面的初始化promise的resolve
+  const articleContent = props.article_content
+  const articleTitle = props.title
+  const viewCount = props.view_count
+  const typeName = props.typeName
+  const addTime = props.addTime
 
-    const tocify = new Tocify()
-    const renderer = new marked.Renderer();
-    renderer.heading = function (text, level, raw) {
-        const anchor = tocify.add(text, level);
-        return `<a id="${anchor}" href="#${anchor}" class="anchor-fix"><h${level}>${text}</h${level}></a>\n`;
-    };
+  const tocify = new Tocify()
+  const renderer = new marked.Renderer()
+  renderer.heading = function (text, level, raw) {
+    const anchor = tocify.add(text, level)
+    return `<a id="${anchor}" href="#${anchor}" class="anchor-fix"><h${level}>${text}</h${level}></a>\n`
+  }
 
-    marked.setOptions({
-        renderer: renderer,
-        gfm: true,
-        pedantic: false,
-        sanitize: false,
-        tables: true,
-        breaks: false,
-        smartLists: true,
-        smartypants: false,
-        highlight: function (code) {
-            return hljs.highlightAuto(code).value;
-        }
-    });
-    let html = marked(articleContent)
+  marked.setOptions({
+    renderer: renderer,
+    gfm: true,
+    pedantic: false,
+    sanitize: false,
+    tables: true,
+    breaks: false,
+    smartLists: true,
+    smartypants: false,
+    highlight: function (code) {
+      return hljs.highlightAuto(code).value
+    }
+  })
+  const html = marked(articleContent)
 
-    return (
+  return (
         <>
             <Head>
                 <title>博客详细页</title>
@@ -76,7 +75,7 @@ const Detailed = (props) => {// props来自下面的初始化promise的resolve
                             </div>
 
                             <div className={s.detailed_content}
-                                 dangerouslySetInnerHTML={{__html: html}}>
+                                 dangerouslySetInnerHTML={{ __html: html }}>
                             </div>
 
                         </div>
@@ -100,19 +99,18 @@ const Detailed = (props) => {// props来自下面的初始化promise的resolve
             <Footer/>
 
         </>
-    )
+  )
 }
 Detailed.getInitialProps = async (context) => {
+  console.log(context.query.id)
+  const id = context.query.id
+  const promise = new Promise((resolve) => {
+    axios(servicePath.getArticleById + id).then((res) => {
+      resolve(res.data.data[0])
+    }
+    )
+  })
 
-    console.log(context.query.id)
-    let id = context.query.id
-    const promise = new Promise((resolve) => {
-        axios(servicePath.getArticleById + id).then((res) => {
-                resolve(res.data.data[0])
-            }
-        )
-    })
-
-    return await promise
+  return await promise
 }
 export default Detailed

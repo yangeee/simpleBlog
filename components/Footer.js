@@ -11,6 +11,7 @@ const Footer = () => (
       <span className={s.drive}> React </span> &
       <span className={s.drive}> Next </span> &
       <span className={s.drive}> Egg </span> &
+      <span className={s.drive}> Redux </span> &
       <span className={s.drive}> Ant Design </span> &
       <span className={s.drive}> Mysql </span> &
       <span className={s.drive}> Jenkins </span> &

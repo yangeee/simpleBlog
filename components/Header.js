@@ -6,14 +6,24 @@ import servicePath from '../config/apiUrl'
 import s from '@sc/Header.module.scss'
 import { Col, Row } from 'antd'
 import { HomeTwoTone } from '@ant-design/icons'
+// 状态管理
+import { useSelector } from 'react-redux'
 
 const Header = () => {
   const [navArray, setNavArray] = useState([])
   const [scrollState, setScrollState] = useState(false)
+  const { distance } = useSelector(state => state.scroll) // 从入口里面拿scroll这个reducer的state
+
+  useEffect(() => {
+    if (distance > 100) {
+      setScrollState(true)
+    } else {
+      setScrollState(false)
+    }
+  }, [distance])
 
   useEffect(() => {
     fetchData()
-    addScrollClass()
   }, [])
 
   return (
