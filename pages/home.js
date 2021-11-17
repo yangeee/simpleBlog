@@ -15,9 +15,9 @@ import s from '@sp/index.module.scss'
 
 import Image from 'next/image'
 // 状态管理
-import { useStore } from '../store/index'
+import { useStateStore } from '../store/index'
 
-const [/* state */, dispatch, StoreProvider] = useStore()
+const [/* state */, dispatch, StoreProvider] = useStateStore()
 
 const Home = (props) => {
   const { list } = props
