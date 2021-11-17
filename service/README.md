@@ -2,6 +2,7 @@ Hi，这里是杨艺的个人博客代码仓库
 [线上博客入口](https://yang.plus/)
 
 项目目录:
+
 ``` 
 ├── admin
 │   ├── build
@@ -23,7 +24,7 @@ Hi，这里是杨艺的个人博客代码仓库
 ├── pages
 │   ├── api
 │   ├── detailed.js
-│   ├── app.js
+│   ├── home.js
 │   ├── list.js
 │   └── _app.js
 ├── public
@@ -51,20 +52,27 @@ Hi，这里是杨艺的个人博客代码仓库
 ``` 
 
 # Install
+
 `npm i`
 
 ### Development
+
 client
+
 ```
 npm run dev  
 ```
+
 serve
+
 ```
 npm run serve  
 ```
+
 Don't forget to open your database before run serve
 
 ### Deploy
+
 I did some automation, so I only had to push to github, you need to configure your jenkins to interact with the server yourself
 
 ### Enjoy Your Blog!

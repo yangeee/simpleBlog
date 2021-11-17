@@ -1,16 +1,15 @@
 {
-  "name": "simpleBlog",
-  "version": "0.1.0",
+  "name": "simpleblog",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "NODE_ENV=production node server.js",
+    "start": "next start",
     "serve": "cd service/ & npm run start"
   },
   "dependencies": {
     "@ant-design/icons": "^4.6.2",
-    "@reduxjs/toolkit": "^1.6.2",
     "antd": "^4.14.1",
     "axios": "^0.21.1",
     "babel-plugin-import": "^1.13.3",
@@ -18,20 +17,21 @@
     "highlight.js": "^10.7.2",
     "lodash": "^4.17.21",
     "marked": "^2.0.3",
-    "next": "^10.0.9",
-    "react": "17.0.2",
-    "react-dom": "17.0.2",
-    "react-redux": "^7.2.6",
+    "next": "^12.0.4",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
     "sass": "^1.34.0",
     "url-loader": "^4.1.1"
   },
   "devDependencies": {
+    "@types/lodash": "^4.14.177",
     "eslint": "^7.32.0",
     "eslint-config-standard": "^16.0.3",
     "eslint-plugin-import": "^2.25.3",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^5.1.1",
     "eslint-plugin-react": "^7.27.0",
-    "html-webpack-plugin": "5.3.1"
+    "html-webpack-plugin": "5.3.1",
+    "prop-types": "^15.7.2"
   }
 }

@@ -1,19 +1,19 @@
-import React, { useState } from 'react'
+import React from 'react'
 import Head from 'next/head'
-import { Row, Col, Breadcrumb, Affix } from 'antd'
+import { Affix, Breadcrumb, Col, Row } from 'antd'
 import Header from '../components/Header'
 import Author from '../components/Author'
 import Advert from '../components/Advert'
 import Footer from '../components/Footer'
 import s from '@sp/detailed.module.scss'
-import { CalendarOutlined, FolderAddOutlined, FireOutlined } from '@ant-design/icons'
+import { CalendarOutlined, FireOutlined, FolderAddOutlined } from '@ant-design/icons'
 import marked from 'marked'
 import hljs from 'highlight.js/lib/core'
 import javascript from 'highlight.js/lib/languages/javascript'
 import 'highlight.js/styles/monokai-sublime.css'
 import axios from 'axios'
 import servicePath from '../config/apiUrl'
-import Tocify from '../components/tocify.tsx'
+import PropTypes from 'prop-types'
 
 hljs.registerLanguage('javascript', javascript)
 
@@ -24,11 +24,9 @@ const Detailed = (props) => { // props来自下面的初始化promise的resolve
   const typeName = props.typeName
   const addTime = props.addTime
 
-  const tocify = new Tocify()
   const renderer = new marked.Renderer()
-  renderer.heading = function (text, level, raw) {
-    const anchor = tocify.add(text, level)
-    return `<a id="${anchor}" href="#${anchor}" class="anchor-fix"><h${level}>${text}</h${level}></a>\n`
+  renderer.heading = function (text, level) {
+    return `<a  class="anchor-fix"><h${level}>${text}</h${level}></a>`
   }
 
   marked.setOptions({
@@ -47,58 +45,58 @@ const Detailed = (props) => { // props来自下面的初始化promise的resolve
   const html = marked(articleContent)
 
   return (
-        <>
-            <Head>
-                <title>博客详细页</title>
-            </Head>
-            <Header/>
-            <Row className={s.com_main} type="flex" justify="center">
-                <Col className={s.com_left} xs={24} sm={24} md={16} lg={18} xl={14}>
-                    <div>
-                        <div className={s.bread_div}>
-                            <Breadcrumb>
-                                <Breadcrumb.Item><a href="/">首页</a></Breadcrumb.Item>
-                                <Breadcrumb.Item>文章列表</Breadcrumb.Item>
-                                <Breadcrumb.Item>xxxx</Breadcrumb.Item>
-                            </Breadcrumb>
-                        </div>
+    <>
+      <Head>
+        <title>博客详细页</title>
+      </Head>
+      <Header/>
+      <Row className={s.com_main} type="flex" justify="center">
+        <Col className={s.com_left} xs={24} sm={24} md={16} lg={18} xl={14}>
+          <div>
+            <div className={s.bread_div}>
+              <Breadcrumb>
+                <Breadcrumb.Item><a href="/">首页</a></Breadcrumb.Item>
+                <Breadcrumb.Item>文章列表</Breadcrumb.Item>
+                <Breadcrumb.Item>xxxx</Breadcrumb.Item>
+              </Breadcrumb>
+            </div>
 
-                        <div>
-                            <div className={s.detailed_title}>
-                                {articleTitle}
-                            </div>
+            <div>
+              <div className={s.detailed_title}>
+                {articleTitle}
+              </div>
 
-                            <div className={s.iconAll + ' ' + s.center}>
-                                <span><CalendarOutlined/> {addTime} </span>
-                                <span><FolderAddOutlined/> {typeName} </span>
-                                <span><FireOutlined/> {viewCount}次浏览</span>
-                            </div>
+              <div className={s.iconAll + ' ' + s.center}>
+                <span><CalendarOutlined/> {addTime} </span>
+                <span><FolderAddOutlined/> {typeName} </span>
+                <span><FireOutlined/> {viewCount}次浏览</span>
+              </div>
 
-                            <div className={s.detailed_content}
-                                 dangerouslySetInnerHTML={{ __html: html }}>
-                            </div>
+              <div className={s.detailed_content}
+                   dangerouslySetInnerHTML={{ __html: html }}>
+              </div>
 
-                        </div>
+            </div>
 
-                    </div>
-                </Col>
+          </div>
+        </Col>
 
-                <Col className xs={0} sm={0} md={7} lg={5} xl={4}>
-                    <Author/>
-                    <Advert/>
-                    <Affix offsetTop={5}>
-                        <div className=" ">
-                            <div className={s.nav_title}>文章目录</div>
-                            <div className={s.toc_list}>
-                                {tocify && tocify.render()}
-                            </div>
-                        </div>
-                    </Affix>
-                </Col>
-            </Row>
-            <Footer/>
+        <Col className xs={0} sm={0} md={7} lg={5} xl={4}>
+          <Author/>
+          <Advert/>
+          <Affix offsetTop={5}>
+            <div className=" ">
+              <div className={s.nav_title}>文章目录</div>
+              <div className={s.toc_list}>
+                111
+              </div>
+            </div>
+          </Affix>
+        </Col>
+      </Row>
+      <Footer/>
 
-        </>
+    </>
   )
 }
 Detailed.getInitialProps = async (context) => {
@@ -112,5 +110,13 @@ Detailed.getInitialProps = async (context) => {
   })
 
   return await promise
+}
+Detailed.propTypes = {
+  list: PropTypes.any,
+  title: PropTypes.any,
+  article_content: PropTypes.any,
+  view_count: PropTypes.any,
+  typeName: PropTypes.any,
+  addTime: PropTypes.any
 }
 export default Detailed

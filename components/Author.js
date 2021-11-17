@@ -2,16 +2,17 @@ import s from '@sc/Author.module.scss'
 import { GithubOutlined, QqOutlined, WechatOutlined } from '@ant-design/icons'
 import React from 'react'
 import { Popover } from 'antd'
+import Image from 'next/image'
 
 const Author = () => {
   const wechat = (
     <div className={s.qrCode}>
-      <img src="/images/wechat.png" alt="" width={150} height={150}/>
+      <Image src="/images/wechat.png" alt="" width={150} height={150}/>
     </div>
   )
   const qq = (
     <div className={s.qrCode}>
-      <img src="/images/qq.jpg" alt="" width={150} height={150}/>
+      <Image src="/images/qq.jpg" alt="" width={150} height={150}/>
     </div>
   )
   return (
@@ -24,7 +25,7 @@ const Author = () => {
           我的<span className={s.color}> 秘密基地</span>
         </div>
         <div className={s.blogCardImg}>
-          <img src="/images/touxiang.png" alt="" width={130} height={187}/>
+          <Image src="/images/touxiang.png" alt="" width={130} height={187}/>
         </div>
       </div>
       <div className={s.socialCard}>

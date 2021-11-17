@@ -7,20 +7,19 @@ import s from '@sc/Header.module.scss'
 import { Col, Row } from 'antd'
 import { HomeTwoTone } from '@ant-design/icons'
 // 状态管理
-import { useSelector } from 'react-redux'
+import { useStore } from '../store/index'
 
 const Header = () => {
   const [navArray, setNavArray] = useState([])
   const [scrollState, setScrollState] = useState(false)
-  const { distance } = useSelector(state => state.scroll) // 从入口里面拿scroll这个reducer的state
-
+  const [state] = useStore()
   useEffect(() => {
-    if (distance > 100) {
+    if (state.distance > 100) {
       setScrollState(true)
     } else {
       setScrollState(false)
     }
-  }, [distance])
+  }, [state.distance])
 
   useEffect(() => {
     fetchData()
@@ -46,18 +45,6 @@ const Header = () => {
       </Row>
     </div>
   )
-
-  // 滚动改变头部样式
-  function addScrollClass () {
-    window.addEventListener('scroll', () => {
-      const scrollTop = document.documentElement.scrollTop
-      if (scrollTop > 100) {
-        setScrollState(true)
-      } else {
-        setScrollState(false)
-      }
-    })
-  }
 
   async function fetchData () {
     await axios(servicePath.getTypeInfo).then(

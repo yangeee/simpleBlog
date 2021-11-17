@@ -1,21 +1,15 @@
-import App from './app.js'
-import { Provider } from 'react-redux'
-import store from '../store'
-import { Container } from 'next/app'
+import Home from './home.js'
 // 数据传输
 import axios from 'axios'
 import servicePath from '../config/apiUrl'
 
-const AppWrapper = (list) => {
+const App = (list) => {
   return (
-      <Container>
-          <Provider store={store}>
-              <App list={list}/>
-          </Provider>
-      </Container>
+    <Home list={list}/>
   )
 }
-AppWrapper.getInitialProps = async () => {
+
+export async function getServerSideProps (context) {
   const promise = new Promise((resolve) => {
     axios(servicePath.getArticleList).then(
       (res) => {
@@ -23,6 +17,12 @@ AppWrapper.getInitialProps = async () => {
       }
     )
   })
-  return await promise
+  const list = await promise
+  return {
+    props: {
+      list
+    } // will be passed to the page component as props
+  }
 }
-export default AppWrapper
+
+export default App
