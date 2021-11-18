@@ -7,7 +7,7 @@ import s from '@sc/Header.module.scss'
 import { Col, Row } from 'antd'
 import { HomeTwoTone } from '@ant-design/icons'
 // 状态管理
-import { ScrollContext } from 'store/ContextManage'
+import { ScrollContext } from 'front/store/ContextManage'
 
 const Header = () => {
   const [navArray, setNavArray] = useState([])

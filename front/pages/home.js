@@ -14,7 +14,7 @@ import s from '@sp/index.module.scss'
 
 import Image from 'next/image'
 // 状态管理
-import { ScrollContext } from 'store/ContextManage'
+import { ScrollContext } from 'front/store/ContextManage'
 
 const Home = (props) => {
   const { list, verse } = props

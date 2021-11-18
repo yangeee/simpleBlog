@@ -7,7 +7,7 @@
     "build": "next build",
     "buildT": "next build & rm next.tar.gz & tar -zcvf next.tar.gz .next",
     "start": "next start",
-    "serve": "cd service/ & npm run start"
+    "serve": "cd ../service & npm run start"
   },
   "dependencies": {
     "@ant-design/icons": "^4.6.2",

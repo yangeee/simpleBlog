@@ -2,7 +2,7 @@ import s from '@sc/BackToTop.module.scss'
 import { VerticalAlignTopOutlined } from '@ant-design/icons'
 // 状态管理
 import { useContext, useEffect, useState } from 'react'
-import { ScrollContext } from 'store/ContextManage'
+import { ScrollContext } from 'front/store/ContextManage'
 import { easeOut } from '@utils/utils'
 
 const BackToTop = () => {

@@ -1,15 +1,15 @@
 {
   "compilerOptions": {
-    "baseUrl": ".",
+    "baseUrl": "..",
     "paths": {
       "@sc/*": [
-        "public/static/style/components/*"
+        "front/public/static/style/components/*"
       ],
       "@sp/*": [
-        "public/static/style/pages/*"
+        "front/public/static/style/pages/*"
       ],
       "@utils/*": [
-        "public/utils/*"
+        "front/public/utils/*"
       ]
     },
     "jsx": "react"
