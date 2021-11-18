@@ -3,6 +3,7 @@ import { GithubOutlined, QqOutlined, WechatOutlined } from '@ant-design/icons'
 import React from 'react'
 import { Popover } from 'antd'
 import Image from 'next/image'
+import { getTimeState } from '@utils/utils'
 
 const Author = () => {
   const wechat = (
@@ -19,7 +20,7 @@ const Author = () => {
     <div className={s.authorContainer}>
       <div className={s.authorDiv}>
         <div className={s.blogCardText}>
-          下午好呀<br/>
+          {getTimeState()}好呀<br/>
           我是<span className={s.color}> 止水</span><br/>
           欢迎来到<br/>
           我的<span className={s.color}> 秘密基地</span>

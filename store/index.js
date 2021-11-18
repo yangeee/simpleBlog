@@ -1,5 +1,6 @@
-import { createContext, useContext, useReducer } from 'react'
+import { createContext, useReducer } from 'react'
 import PropTypes from 'prop-types'
+
 const initialState = { distance: 0 }
 
 function reducer (state, action) {
@@ -10,30 +11,23 @@ function reducer (state, action) {
       throw new Error()
   }
 }
+
 const StateContext = createContext()
 const DispatchContext = createContext()
 
-function useStateStore () {
-  return useContext(StateContext)
-}
-
-function useDispatchStore () {
-  return useContext(DispatchContext)
-}
-
-function StoreProvider ({ children }) {
+const StoreProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState)
 
   return (
-      <StateContext.Provider value={state}>
-               <DispatchContext.Provider value={dispatch}>
-                  {children}
-                 </DispatchContext.Provider>
-              </StateContext.Provider>
+    <StateContext.Provider value={state}>
+      <DispatchContext.Provider value={dispatch}>
+        {children}
+      </DispatchContext.Provider>
+    </StateContext.Provider>
   )
 }
 
 StoreProvider.propTypes = {
   children: PropTypes.any
 }
-export { useStateStore, useDispatchStore, StoreProvider }
+export { StateContext, DispatchContext, StoreProvider }

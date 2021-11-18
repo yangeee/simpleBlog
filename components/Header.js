@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import Router from 'next/router'
 import axios from 'axios'
 import servicePath from '../config/apiUrl'
@@ -7,19 +7,20 @@ import s from '@sc/Header.module.scss'
 import { Col, Row } from 'antd'
 import { HomeTwoTone } from '@ant-design/icons'
 // 状态管理
-import { useStore } from '../store/index'
+import { ScrollContext } from 'store/ContextManage'
 
 const Header = () => {
   const [navArray, setNavArray] = useState([])
   const [scrollState, setScrollState] = useState(false)
-  const [state] = useStore()
+  const distance = useContext(ScrollContext)
+
   useEffect(() => {
-    if (state.distance > 100) {
+    if (distance > 100) {
       setScrollState(true)
     } else {
       setScrollState(false)
     }
-  }, [state.distance])
+  }, [distance])
 
   useEffect(() => {
     fetchData()

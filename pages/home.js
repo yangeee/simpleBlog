@@ -15,15 +15,14 @@ import s from '@sp/index.module.scss'
 
 import Image from 'next/image'
 // 状态管理
-import { useStateStore } from '../store/index'
-
-const [/* state */, dispatch, StoreProvider] = useStateStore()
+import { ScrollContext } from 'store/ContextManage'
 
 const Home = (props) => {
   const { list } = props
   const [myList] = useState(list.list.data)
   const { TabPane } = Tabs
-  console.log(list)
+
+  const [distance, setDistance] = useState(0)
 
   function callback (key) {
     console.log(key)
@@ -32,17 +31,16 @@ const Home = (props) => {
   // 收集滚动高度
   useEffect(() => {
     window.addEventListener('scroll', () => {
-      const distance = document.documentElement.scrollTop
-      dispatch(({ type: 'change', distance }))
+      setDistance(document.documentElement.scrollTop)
     })
   }, [])
 
   return (
     <div className={s.mainContainer}>
       {/* 通用头部 */}
-      <StoreProvider>
+      <ScrollContext.Provider value={distance}>
         <Header/>
-      </StoreProvider>
+      </ScrollContext.Provider>
       <HomeTitle/>
       {/* 中间内容区 */}
       <Row className={s.contentContainer} type="flex" justify="center">
@@ -108,9 +106,9 @@ const Home = (props) => {
       </Row>
       {/* 通用脚部 */}
       <Footer/>
-      <StoreProvider>
+      <ScrollContext.Provider value={distance}>
         <BackToTop/>
-      </StoreProvider>
+      </ScrollContext.Provider>
     </div>
   )
 }
