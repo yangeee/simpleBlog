@@ -1,15 +1,8 @@
 import s from '@sc/HomeTitle.module.scss'
-import { verse } from '../config/apiUrl'
-import axios from 'axios'
-import { useEffect, useState } from 'react'
+import PropTypes from 'prop-types'
 
 const HomeTitle = (props) => {
-  const [verse, setVerse] = useState({})
-  useEffect(async () => {
-    const obj = await getVerse()
-    setVerse(obj)
-  }, [])
-
+  const { verse } = props
   return (
     <div className={s.homeTitle}>
       <div className={s.wrapper}>
@@ -22,15 +15,8 @@ const HomeTitle = (props) => {
     </div>
   )
 }
-
-function getVerse () {
-  return new Promise(resolve => {
-    axios(verse.all).then(
-      (res) => {
-        resolve(res.data)
-      }
-    )
-  })
+HomeTitle.propTypes = {
+  list: PropTypes.any,
+  verse: PropTypes.any
 }
-
 export default HomeTitle

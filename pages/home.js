@@ -4,7 +4,6 @@ import PropTypes from 'prop-types'
 import Link from 'next/link'
 import Header from '../components/Header'
 import Author from '../components/Author'
-import Advert from '../components/Advert'
 import Footer from '../components/Footer'
 import HomeTitle from '../components/HomeTitle'
 import BackToTop from '../components/BackToTop'
@@ -18,10 +17,9 @@ import Image from 'next/image'
 import { ScrollContext } from 'store/ContextManage'
 
 const Home = (props) => {
-  const { list } = props
-  const [myList] = useState(list.list.data)
+  const { list, verse } = props
+  const [myList] = useState(list.data)
   const { TabPane } = Tabs
-
   const [distance, setDistance] = useState(0)
 
   function callback (key) {
@@ -41,7 +39,7 @@ const Home = (props) => {
       <ScrollContext.Provider value={distance}>
         <Header/>
       </ScrollContext.Provider>
-      <HomeTitle/>
+      <HomeTitle verse={verse}/>
       {/* 中间内容区 */}
       <Row className={s.contentContainer} type="flex" justify="center">
         {/* 左侧文章列表 */}
@@ -101,7 +99,6 @@ const Home = (props) => {
         {/* 右侧个人介绍区 */}
         <Col className="comm-right" xs={0} sm={0} md={6} lg={6} xl={8}>
           <Author/>
-          <Advert/>
         </Col>
       </Row>
       {/* 通用脚部 */}
@@ -113,13 +110,13 @@ const Home = (props) => {
   )
 }
 Home.propTypes = {
-  list: PropTypes.any
+  list: PropTypes.any,
+  verse: PropTypes.any
 }
 Home.defaultProps = {
   list: {
-    list: {
-      data: []
-    }
-  }
+    data: []
+  },
+  verse: {}
 }
 export default Home

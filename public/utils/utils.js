@@ -21,6 +21,7 @@ export const getTimeState = () => {
   }
   return text
 }
+
 /**
  * 缓冲函数
  * @param {Number} position 当前滚动位置

@@ -1,19 +1,20 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import Head from 'next/head'
-import { Affix, Breadcrumb, Col, Row } from 'antd'
+import { Affix, Col, Row } from 'antd'
 import Header from '../components/Header'
 import Author from '../components/Author'
 import Advert from '../components/Advert'
 import Footer from '../components/Footer'
-import s from '@sp/detailed.module.scss'
-import { CalendarOutlined, FireOutlined, FolderAddOutlined } from '@ant-design/icons'
 import marked from 'marked'
 import hljs from 'highlight.js/lib/core'
 import javascript from 'highlight.js/lib/languages/javascript'
-import 'highlight.js/styles/monokai-sublime.css'
+// 数据请求
 import axios from 'axios'
 import servicePath from '../config/apiUrl'
-import PropTypes from 'prop-types'
+// 样式文件
+import s from '@sp/detailed.module.scss'
+import 'highlight.js/styles/monokai-sublime.css'
 
 hljs.registerLanguage('javascript', javascript)
 
@@ -26,7 +27,7 @@ const Detailed = (props) => { // props来自下面的初始化promise的resolve
 
   const renderer = new marked.Renderer()
   renderer.heading = function (text, level) {
-    return `<a  class="anchor-fix"><h${level}>${text}</h${level}></a>`
+    return `<h${level}>${text}</h${level}>`
   }
 
   marked.setOptions({
@@ -47,37 +48,28 @@ const Detailed = (props) => { // props来自下面的初始化promise的resolve
   return (
     <>
       <Head>
-        <title>博客详细页</title>
+        <title>{articleTitle}</title>
       </Head>
       <Header/>
       <Row className={s.com_main} type="flex" justify="center">
         <Col className={s.com_left} xs={24} sm={24} md={16} lg={18} xl={14}>
           <div>
-            <div className={s.bread_div}>
-              <Breadcrumb>
-                <Breadcrumb.Item><a href="/">首页</a></Breadcrumb.Item>
-                <Breadcrumb.Item>文章列表</Breadcrumb.Item>
-                <Breadcrumb.Item>xxxx</Breadcrumb.Item>
-              </Breadcrumb>
-            </div>
-
             <div>
               <div className={s.detailed_title}>
                 {articleTitle}
               </div>
 
-              <div className={s.iconAll + ' ' + s.center}>
-                <span><CalendarOutlined/> {addTime} </span>
-                <span><FolderAddOutlined/> {typeName} </span>
-                <span><FireOutlined/> {viewCount}次浏览</span>
+              <div className={s.labels + ' ' + s.center}>
+                <span>{addTime} </span>
+                <span>{typeName} </span>
+                <span> {viewCount}次浏览</span>
               </div>
-
+            </div>
+            <div className={s.contentAll}>
               <div className={s.detailed_content}
                    dangerouslySetInnerHTML={{ __html: html }}>
               </div>
-
             </div>
-
           </div>
         </Col>
 
@@ -85,12 +77,7 @@ const Detailed = (props) => { // props来自下面的初始化promise的resolve
           <Author/>
           <Advert/>
           <Affix offsetTop={5}>
-            <div className=" ">
-              <div className={s.nav_title}>文章目录</div>
-              <div className={s.toc_list}>
-                111
-              </div>
-            </div>
+            <div className={s.nav_title}>文章目录</div>
           </Affix>
         </Col>
       </Row>
