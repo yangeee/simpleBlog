@@ -28,9 +28,13 @@ const Home = (props) => {
 
   // 收集滚动高度
   useEffect(() => {
-    window.addEventListener('scroll', () => {
+    const fn = () => {
       setDistance(document.documentElement.scrollTop)
-    })
+    }
+    window.addEventListener('scroll', fn)
+    return () => {
+      window.removeEventListener('scroll', fn)
+    }
   }, [])
 
   return (

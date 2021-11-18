@@ -30,7 +30,7 @@ const Header = () => {
     <div className={[s.header, scrollState ? s.scrollState : null].join(' ')}>
       <Row type="flex" justify="center" align="middle" className={`${s.row}`}>
         <Col xs={24} sm={24} md={4} lg={4} xl={4} className={`${s.headerTitle}`}>
-          <div key={0} onClick={handleClick}>
+          <div onClick={handleClick}>
             <HomeTwoTone twoToneColor="#eb2f96" className={`${s.icon} ${s.hover}`}/>
           </div>
         </Col>
@@ -57,11 +57,8 @@ const Header = () => {
 
   // 跳转到列表页
   function handleClick (e) {
-    if (e.key === 0) {
-      Router.push('/')
-    } else {
-      Router.push('/list?id=' + e.key)
-    }
+    Router.push('/')
+    // Router.push('/list?id=' + e.key)
   }
 }
 
