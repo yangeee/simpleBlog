@@ -10,8 +10,8 @@ import BackToTop from '../components/BackToTop'
 // UI组件
 import { Col, List, Row, Tabs } from 'antd'
 import { CalendarTwoTone, FireTwoTone, FolderOpenTwoTone } from '@ant-design/icons'
-import s from '@sp/index.module.scss'
-
+import s from '@sp/home.module.scss'
+import bubbly from '@utils/bubbly-bg'
 import Image from 'next/image'
 // 状态管理
 import { ScrollContext } from 'front/store/ContextManage'
@@ -31,6 +31,13 @@ const Home = (props) => {
     const fn = () => {
       setDistance(document.documentElement.scrollTop)
     }
+    bubbly({
+      colorStart: '#fff4e6',
+      colorStop: '#ffe9e4',
+      blur: 1,
+      compose: 'source-over',
+      bubbleFunc: () => `hsla(${Math.random() * 50}, 100%, 50%, .3)`
+    })
     window.addEventListener('scroll', fn)
     return () => {
       window.removeEventListener('scroll', fn)
@@ -57,12 +64,12 @@ const Home = (props) => {
                 renderItem={item => (
                   <List.Item className={s.listItem}>
                     <div className={s.left}>
-                      <Image src="/images/1.jpg" width={300} height={170}/>
+                      <Image src="/images/1.jpg" layout="fixed" width={300} height={170}/>
                     </div>
                     <div className={s.right}>
                       <div className={s.listTitle}>
                         <Link href={{ pathname: '/detailed', query: { id: item.id } }}>
-                          <a>{item.title}</a>
+                          <a>{item.title.length > 50 ? item.title.substring(0, 50) + '...' : item.title}</a>
                         </Link>
                       </div>
                       <div className={s.listIcon}>
@@ -101,7 +108,7 @@ const Home = (props) => {
           </Tabs>
         </Col>
         {/* 右侧个人介绍区 */}
-        <Col className="comm-right" xs={0} sm={0} md={6} lg={6} xl={8}>
+        <Col className="comm-right" xs={0} sm={0} md={0} lg={0} xl={6}>
           <Author/>
         </Col>
       </Row>

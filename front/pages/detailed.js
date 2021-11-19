@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Head from 'next/head'
-import { Affix, Col, Row } from 'antd'
+import { Col, Row } from 'antd'
 import Header from '../components/Header'
 import Author from '../components/Author'
 import Advert from '../components/Advert'
@@ -36,14 +36,14 @@ const Detailed = (props) => { // props来自下面的初始化promise的resolve
     pedantic: false,
     sanitize: false,
     tables: true,
-    breaks: false,
+    breaks: true,
     smartLists: true,
     smartypants: false,
     highlight: function (code) {
       return hljs.highlightAuto(code).value
     }
   })
-  const html = marked(articleContent)
+  const html = marked.parse(articleContent)
 
   return (
     <>
@@ -76,9 +76,9 @@ const Detailed = (props) => { // props来自下面的初始化promise的resolve
         <Col className xs={0} sm={0} md={7} lg={5} xl={4}>
           <Author/>
           <Advert/>
-          <Affix offsetTop={5}>
-            <div className={s.nav_title}>文章目录</div>
-          </Affix>
+          {/* <Affix offsetTop={5}> */}
+          {/*  <div className={s.nav_title}>文章目录</div> */}
+          {/* </Affix> */}
         </Col>
       </Row>
       <Footer/>
