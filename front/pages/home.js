@@ -54,7 +54,7 @@ const Home = (props) => {
       {/* 中间内容区 */}
       <Row className={s.contentContainer} type="flex" justify="center">
         {/* 左侧文章列表 */}
-        <Col className={s.commLeft} xs={24} sm={24} md={16} lg={18} xl={14}>
+        <Col className={s.commLeft} xs={24} sm={24} md={24} lg={18} xl={14}>
           <Tabs defaultActiveKey="1" onChange={callback} animated={true}>
             <TabPane tab={<span className={s.recommendType}>最新</span>} key="1">
               <List
