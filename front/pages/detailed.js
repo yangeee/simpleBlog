@@ -4,7 +4,6 @@ import Head from 'next/head'
 import { Col, Row } from 'antd'
 import Header from '../components/Header'
 import Author from '../components/Author'
-import Advert from '../components/Advert'
 import Footer from '../components/Footer'
 import marked from 'marked'
 import hljs from 'highlight.js/lib/core'
@@ -75,7 +74,6 @@ const Detailed = (props) => { // props来自下面的初始化promise的resolve
 
         <Col className xs={0} sm={0} md={7} lg={5} xl={4}>
           <Author/>
-          <Advert/>
           {/* <Affix offsetTop={5}> */}
           {/*  <div className={s.nav_title}>文章目录</div> */}
           {/* </Affix> */}
