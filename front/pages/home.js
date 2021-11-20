@@ -65,26 +65,24 @@ const Home = (props) => {
                 dataSource={myList}
                 split={false}
                 renderItem={item => (
-                  <List.Item>
-                    <Link href={{ pathname: '/detailed', query: { id: item.id } }}>
-                      <div className={s.listItem}>
-                        <div className={s.left}>
-                          <Image src="/images/1.jpg" layout="fixed" width={300} height={170}/>
-                        </div>
-                        <div className={s.right}>
-                          <div className={s.listTitle}>
-                            <a>{item.title.length > 50 ? item.title.substring(0, 50) + '...' : item.title}</a>
-                          </div>
-                          <div className={s.listIcon}>
-                            <span><RocketTwoTone twoToneColor="#f7aac7"/>{item.addTime}</span>
-                            <span><FolderAddTwoTone twoToneColor="#f7aac7"/> {item.typeName}</span>
-                            <span><HeartTwoTone twoToneColor="#f7aac7"/> {item.view_count} 次浏览</span>
-                          </div>
-                          <div className={s.listContext}>{item.introduce}</div>
-                        </div>
+                  <Link href={{ pathname: '/detailed', query: { id: item.id } }}>
+                    <List.Item className={s.listItem}>
+                      <div className={s.left}>
+                        <Image src="/images/1.jpg" layout="fixed" width={300} height={170}/>
                       </div>
-                    </Link>
-                  </List.Item>
+                      <div className={s.right}>
+                        <div className={s.listTitle}>
+                          <a>{item.title.length > 50 ? item.title.substring(0, 50) + '...' : item.title}</a>
+                        </div>
+                        <div className={s.listIcon}>
+                          <span><RocketTwoTone twoToneColor="#f7aac7"/>{item.addTime}</span>
+                          <span><FolderAddTwoTone twoToneColor="#f7aac7"/> {item.typeName}</span>
+                          <span><HeartTwoTone twoToneColor="#f7aac7"/> {item.view_count} 次浏览</span>
+                        </div>
+                        <div className={s.listContext}>{item.introduce}</div>
+                      </div>
+                    </List.Item>
+                  </Link>
                 )}
               />
             </TabPane>
@@ -94,26 +92,24 @@ const Home = (props) => {
                 dataSource={myList}
                 split={false}
                 renderItem={item => (
-                  <List.Item>
-                    <Link href={{ pathname: '/detailed', query: { id: item.id } }}>
-                      <div className={s.listItem}>
-                        <div className={s.left}>
-                          <Image src="/images/1.jpg" layout="fixed" width={300} height={170}/>
-                        </div>
-                        <div className={s.right}>
-                          <div className={s.listTitle}>
-                            <a>{item.title.length > 50 ? item.title.substring(0, 50) + '...' : item.title}</a>
-                          </div>
-                          <div className={s.listIcon}>
-                            <span><RocketTwoTone twoToneColor="#f7aac7"/>{item.addTime}</span>
-                            <span><FolderAddTwoTone twoToneColor="#f7aac7"/> {item.typeName}</span>
-                            <span><HeartTwoTone twoToneColor="#f7aac7"/> {item.view_count} 次浏览</span>
-                          </div>
-                          <div className={s.listContext}>{item.introduce}</div>
-                        </div>
+                  <Link href={{ pathname: '/detailed', query: { id: item.id } }}>
+                    <List.Item className={s.listItem}>
+                      <div className={s.left}>
+                        <Image src="/images/1.jpg" layout="fixed" width={300} height={170}/>
                       </div>
-                    </Link>
-                  </List.Item>
+                      <div className={s.right}>
+                        <div className={s.listTitle}>
+                          <a>{item.title.length > 50 ? item.title.substring(0, 50) + '...' : item.title}</a>
+                        </div>
+                        <div className={s.listIcon}>
+                          <span><RocketTwoTone twoToneColor="#f7aac7"/>{item.addTime}</span>
+                          <span><FolderAddTwoTone twoToneColor="#f7aac7"/> {item.typeName}</span>
+                          <span><HeartTwoTone twoToneColor="#f7aac7"/> {item.view_count} 次浏览</span>
+                        </div>
+                        <div className={s.listContext}>{item.introduce}</div>
+                      </div>
+                    </List.Item>
+                  </Link>
                 )}
               />
             </TabPane>
