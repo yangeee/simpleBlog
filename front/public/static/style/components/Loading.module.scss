@@ -1,0 +1,26 @@
+.container {
+  pointerevents: none;
+}
+
+.bar {
+  background: #ffffff;
+  height: 4px;
+  left: 0;
+  position: fixed;
+  top: 0px;
+  width: 100%;
+  z-index: 1031;
+  border-radius: 2px;
+  box-shadow: 0px 0px 15px 8px #8bc34a;
+}
+
+.spinner {
+  box-shadow: 0 0 10px #683f99, 0 0 5px #9c19a1;
+  display: block;
+  height: 100%;
+  opacity: 1;
+  position: absolute;
+  right: 0;
+  transform: rotate(3deg) translate(0px, -4px);
+  width: 100px;
+}

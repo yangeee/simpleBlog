@@ -4,7 +4,7 @@ import axios from 'axios'
 import servicePath, { verse } from '../config/apiUrl'
 import PropTypes from 'prop-types'
 
-const App = (props) => {
+const Index = (props) => {
   return (
     <Home list={props.list} verse={props.verse}/>
   )
@@ -35,8 +35,8 @@ export async function getServerSideProps (context) {
   }
 }
 
-App.propTypes = {
+Index.propTypes = {
   list: PropTypes.any,
   verse: PropTypes.any
 }
-export default App
+export default Index

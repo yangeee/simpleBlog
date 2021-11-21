@@ -6,7 +6,8 @@
 # testing
 
 # next.js
-/.next/
+/front/.next/
+/front/node_modules/
 /out/
 
 # misc
