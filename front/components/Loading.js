@@ -15,7 +15,7 @@ const Loading = (props) => {
                    transition: `opacity ${animationDuration}ms linear`
                  }}>
                 <div className={s.bar}
-                     style={{ marginLeft: `${(-1 + progress) * 100}%`, transition: `marginLeft ${animationDuration}ms linear;` }}
+                     style={{ marginLeft: `${(-1 + progress) * 100}%`, transition: `marginLeft ${animationDuration}ms linear` }}
                 >
                     <div className={s.spinner} />
                 </div>
@@ -24,7 +24,7 @@ const Loading = (props) => {
   )
 }
 Loading.propTypes = {
-  isRouteChanging: PropTypes.function
+  isRouteChanging: PropTypes.bool
 }
 Loading.defaultProps = {
   isRouteChanging: false
